@@ -1,18 +1,12 @@
 <!DOCTYPE html>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yet Another Simple Blog</title>
-<spring:url value="/webjars/bootstrap/3.0.2/css/bootstrap.css" var="bootstrapCss" />
-<link href="${bootstrapCss}" rel="stylesheet">
-<spring:url value="/resources/css/style.css" var="customCss" />
-<link href="${customCss}" rel="stylesheet">
-</head>
+
+<jsp:include page="fragments/headTag.jsp"/>
 
 <body>
 
@@ -46,7 +40,7 @@
 		<div class="row">
 			<div class="col-lg-8">
 
-				<!-- blog entry -->
+				<!-- blog entries -->
 				<c:forEach var="post" items="${posts}">
 					<h1>
 						<a href="#">${post.title}</a>
@@ -125,23 +119,12 @@
 
 		<hr>
 
-		<footer>
-			<div class="row">
-				<div class="col-lg-12">
-					<p>Copyright &copy; Yet Another Simple Blog 2013</p>
-				</div>
-			</div>
-		</footer>
+		<jsp:include page="fragments/footer.jsp"/>
 
 	</div>
 	<!-- /.container -->
 
-	<!-- JavaScript -->
-	<spring:url value="/webjars/jquery/2.0.3/jquery.js" var="jqueryJs" />
-	<script src="${jqueryJs}"></script>
-	<spring:url value="/webjars/bootstrap/3.0.2/js/bootstrap.js"
-		var="bootstrapJs" />
-	<script src="${bootstrapJs}"></script>
+	<jsp:include page="fragments/bottomJS.jsp"/>
 
 </body>
 </html>
