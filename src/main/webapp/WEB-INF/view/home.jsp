@@ -51,7 +51,7 @@
 						<a href="#">${post.title}</a>
 					</h1>
 					<p class="lead">
-						by <a href="index.php">${post.author.fullName}</a>
+						by <a href="#author">${post.author.fullName}</a>
 					</p>
 					<hr>
 					<p>
@@ -127,7 +127,7 @@
 		<footer>
 			<div class="row">
 				<div class="col-lg-12">
-					<p>Copyright &copy; Company 2013</p>
+					<p>Copyright &copy; Yet Another Simple Blog 2013</p>
 				</div>
 			</div>
 		</footer>

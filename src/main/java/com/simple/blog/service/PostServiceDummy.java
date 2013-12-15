@@ -8,7 +8,6 @@ import java.util.Set;
 
 import net._01001111.text.LoremIpsum;
 
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
 import com.simple.blog.model.Post;
