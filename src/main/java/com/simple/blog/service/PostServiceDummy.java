@@ -25,7 +25,7 @@ public class PostServiceDummy implements PostService {
 		for(int i = 0; i < 5; i++) {
 			Post post = new Post();
 			post.setAuthor(i % 2 == 0 ? users[0] : users[1]);
-			post.setContent(capitalize(jlorem.words(150)));
+			post.setContent(capitalize(jlorem.words(i % 2 == 0 ? 80 : 110)) + ".");
 			post.setCreationDate(new Date());
 			post.setTitle(capitalize(jlorem.words(3)));
 

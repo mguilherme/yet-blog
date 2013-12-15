@@ -25,7 +25,8 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Yet Blog</a>
+				<spring:url value="/" var="homeUrl" />
+				<a class="navbar-brand" href="${homeUrl}">Yet Blog</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
