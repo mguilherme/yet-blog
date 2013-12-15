@@ -62,7 +62,7 @@
 					<hr>
 					<img src="http://placehold.it/900x300" class="img-responsive">
 					<hr>
-					<p>${post.content}</p>
+					<p style="text-align: justify;">${post.content}</p>
 					<a class="btn btn-primary" href="#">Read More <span
 						class="glyphicon glyphicon-chevron-right"></span></a>
 
