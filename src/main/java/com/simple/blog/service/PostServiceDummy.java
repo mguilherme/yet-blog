@@ -11,6 +11,7 @@ import net._01001111.text.LoremIpsum;
 import org.springframework.stereotype.Service;
 
 import com.simple.blog.model.Post;
+import com.simple.blog.model.Reply;
 import com.simple.blog.model.User;
 
 @Service
@@ -28,10 +29,26 @@ public class PostServiceDummy implements PostService {
 			post.setContent(capitalize(jlorem.words(i % 2 == 0 ? 80 : 110)) + ".");
 			post.setCreationDate(new Date());
 			post.setTitle(capitalize(jlorem.words(3)));
+			post.setReplies(getReplies(i % 2 == 0 ? 4 : 10));
 
 			posts.add(post);
 		}
 		return posts;
+	}
+	
+	private Set<Reply> getReplies(int repliesNumber) {
+		Set<Reply> replies = new HashSet<Reply>();
+		LoremIpsum jlorem = new LoremIpsum();
+		User[] users = getDummyUsers();
+		
+		for (int i = 0; i < repliesNumber; i++) {
+			Reply reply = new Reply();
+			reply.setComment(capitalize(jlorem.words(i % 2 == 0 ? 20 : 50)) + ".");
+			reply.setAuthor(i % 2 == 0 ? users[0] : users[1]);
+			
+			replies.add(reply);
+		}
+		return replies;
 	}
 
 	private User[] getDummyUsers() {

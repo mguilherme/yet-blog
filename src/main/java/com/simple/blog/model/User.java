@@ -2,10 +2,19 @@ package com.simple.blog.model;
 
 public class User {
 
+	private long id;
 	private String fullName;
 	private String userName;
 	private String password;
 	private String email;
+	
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
 	
 	public String getFullName() {
 		return fullName;

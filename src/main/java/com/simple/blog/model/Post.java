@@ -1,13 +1,24 @@
 package com.simple.blog.model;
 
 import java.util.Date;
+import java.util.Set;
 
 public class Post {
 
+	private long id;
 	private String title;
 	private User author;
 	private Date creationDate;
 	private String content;
+	private Set<Reply> replies;
+	
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
 	
 	public String getTitle() {
 		return title;
@@ -40,5 +51,13 @@ public class Post {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	
+
+	public Set<Reply> getReplies() {
+		return replies;
+	}
+
+	public void setReplies(Set<Reply> replies) {
+		this.replies = replies;
+	}
+
 }
