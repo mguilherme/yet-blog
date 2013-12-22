@@ -20,10 +20,10 @@
 				<!-- blog entries -->
 				<c:forEach var="post" items="${posts}">
 					<h1>
-						<a href="#">${post.title}</a>
+						<a href="post/${post.id}">${post.title}</a>
 					</h1>
 					<p class="lead">
-						by <a href="#author">${post.author.fullName}</a>
+						by <a href="user/${post.author.userName}">${post.author.fullName}</a>
 					</p>
 					<hr>
 					<p>
@@ -38,7 +38,7 @@
 					<p>
 						<span class="glyphicon glyphicon-comment"></span> ${fn:length(post.replies)} comments
 					</p>
-					<a class="btn btn-primary" href="#">Read More <span
+					<a class="btn btn-primary" href="post/${post.id}">Read More <span
 						class="glyphicon glyphicon-chevron-right"></span></a>
 
 					<hr>

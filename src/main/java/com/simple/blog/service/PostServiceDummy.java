@@ -25,6 +25,7 @@ public class PostServiceDummy implements PostService {
 
 		for(int i = 0; i < 5; i++) {
 			Post post = new Post();
+			post.setId(i+1);
 			post.setAuthor(i % 2 == 0 ? users[0] : users[1]);
 			post.setContent(capitalize(jlorem.words(i % 2 == 0 ? 80 : 110)) + ".");
 			post.setCreationDate(new Date());
@@ -43,6 +44,7 @@ public class PostServiceDummy implements PostService {
 		
 		for (int i = 0; i < repliesNumber; i++) {
 			Reply reply = new Reply();
+			reply.setId(i+1);
 			reply.setComment(capitalize(jlorem.words(i % 2 == 0 ? 20 : 50)) + ".");
 			reply.setAuthor(i % 2 == 0 ? users[0] : users[1]);
 			
@@ -56,6 +58,7 @@ public class PostServiceDummy implements PostService {
 
 		// User 1
 		User user1 = new User();
+		user1.setId(1);
 		user1.setEmail("miguel.guilherme@testmail.com");
 		user1.setFullName("Miguel Guilherme");
 		user1.setPassword("xpto123");
@@ -63,6 +66,7 @@ public class PostServiceDummy implements PostService {
 
 		// User 2
 		User user2 = new User();
+		user2.setId(2);
 		user2.setEmail("john.doe@testmail.com");
 		user2.setFullName("John Doe");
 		user2.setPassword("xpto123");
