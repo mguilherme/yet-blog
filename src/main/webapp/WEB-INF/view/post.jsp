@@ -15,7 +15,7 @@
 				<!-- the actual blog post: title/author/date/content -->
 				<h1>A Simple Blog Template for Bootstrap 3</h1>
 				<p class="lead">
-					by <a href="index.php">Start Bootstrap</a>
+					by <a href="user/xpto">Start Bootstrap</a>
 				</p>
 				<hr>
 				<p>

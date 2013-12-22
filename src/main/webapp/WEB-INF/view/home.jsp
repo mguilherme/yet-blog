@@ -31,13 +31,13 @@
 						<fmt:formatDate value="${post.creationDate}" dateStyle="medium"
 							timeStyle="short" type="both" />
 					</p>
+					<p>
+						<span class="glyphicon glyphicon-comment"></span> ${fn:length(post.replies)} comments
+					</p>
 					<hr>
 					<img src="http://placehold.it/900x300" class="img-responsive">
 					<hr>
 					<p style="text-align: justify;">${post.content}</p>
-					<p>
-						<span class="glyphicon glyphicon-comment"></span> ${fn:length(post.replies)} comments
-					</p>
 					<a class="btn btn-primary" href="post/${post.id}">Read More <span
 						class="glyphicon glyphicon-chevron-right"></span></a>
 
