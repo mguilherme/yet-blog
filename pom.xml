@@ -21,16 +21,12 @@
 		<!-- Misc -->
 		<commons-lang3.version>3.1</commons-lang3.version>
 
-		<!-- Dates -->
-<!-- 		<jodatime-jsptags.version>1.1.1</jodatime-jsptags.version> -->
-<!-- 		<jodatime.version>2.3</jodatime.version> -->
-
 		<!-- WebJars dependencies -->
 		<webjars-bootstrap.version>3.0.2</webjars-bootstrap.version>
 		<webjars-jquery.version>2.0.3-1</webjars-jquery.version>
 
 		<!-- Spring -->
-		<spring-framework.version>3.2.3.RELEASE</spring-framework.version>
+		<spring-framework.version>3.2.6.RELEASE</spring-framework.version>
 
 		<!-- Hibernate / JPA -->
 		<hibernate.version>4.2.1.Final</hibernate.version>
@@ -43,6 +39,43 @@
 		<junit.version>4.11</junit.version>
 
 	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<version>2.9.1</version>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.2.1</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 
 	<dependencies>
 
@@ -94,11 +127,11 @@
 		</dependency>
 
 		<!-- Hibernate -->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-entitymanager</artifactId>
-			<version>${hibernate.version}</version>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.hibernate</groupId> -->
+<!-- 			<artifactId>hibernate-entitymanager</artifactId> -->
+<!-- 			<version>${hibernate.version}</version> -->
+<!-- 		</dependency> -->
 
 		<!-- Webjars (static dependencies distributed as JAR files) -->
 		<dependency>
@@ -111,18 +144,6 @@
 			<artifactId>jquery</artifactId>
 			<version>${webjars-jquery.version}</version>
 		</dependency>
-
-		<!-- Date and Time -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>joda-time</groupId> -->
-<!-- 			<artifactId>joda-time</artifactId> -->
-<!-- 			<version>${jodatime.version}</version> -->
-<!-- 		</dependency> -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>joda-time</groupId> -->
-<!-- 			<artifactId>joda-time-jsptags</artifactId> -->
-<!-- 			<version>${jodatime-jsptags.version}</version> -->
-<!-- 		</dependency> -->
 
 		<!-- Misc -->
 		<dependency>
