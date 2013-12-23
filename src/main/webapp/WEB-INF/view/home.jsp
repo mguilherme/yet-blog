@@ -20,10 +20,12 @@
 				<!-- blog entries -->
 				<c:forEach var="post" items="${posts}">
 					<h1>
-						<a href="post/${post.id}">${post.title}</a>
+						<spring:url value="/post/${post.id}" var="postUrl" />
+						<a href="${postUrl}">${post.title}</a>
 					</h1>
 					<p class="lead">
-						by <a href="user/${post.author.userName}">${post.author.fullName}</a>
+						<spring:url value="/user/${post.author.userName}" var="userUrl" />
+						by <a href="${userUrl}">${post.author.fullName}</a>
 					</p>
 					<hr>
 					<p>
@@ -38,7 +40,7 @@
 					<img src="http://placehold.it/900x300" class="img-responsive">
 					<hr>
 					<p style="text-align: justify;">${post.content}</p>
-					<a class="btn btn-primary" href="post/${post.id}">Read More <span
+					<a class="btn btn-primary" href="${postUrl}">Read More <span
 						class="glyphicon glyphicon-chevron-right"></span></a>
 
 					<hr>

@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+
 <html>
 
 <jsp:include page="fragments/headTag.jsp" />
@@ -15,7 +17,8 @@
 				<!-- the actual blog post: title/author/date/content -->
 				<h1>A Simple Blog Template for Bootstrap 3</h1>
 				<p class="lead">
-					by <a href="user/xpto">Start Bootstrap</a>
+					<spring:url value="/user/xpto" var="userUrl" />
+					by <a href="${userUrl}">Start Bootstrap</a>
 				</p>
 				<hr>
 				<p>
