@@ -1,10 +1,13 @@
 package com.simple.blog.model;
 
+import java.util.Date;
+
 public class Reply {
 
 	private long id;
 	private User author;
 	private String comment;
+	private Date creationDate;
 	
 	public long getId() {
 		return id;
@@ -28,6 +31,14 @@ public class Reply {
 
 	public void setComment(String comment) {
 		this.comment = comment;
+	}
+
+	public Date getCreationDate() {
+		return creationDate;
+	}
+
+	public void setCreationDate(Date creationDate) {
+		this.creationDate = creationDate;
 	}
 
 }
