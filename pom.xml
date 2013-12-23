@@ -28,9 +28,6 @@
 		<!-- Spring -->
 		<spring-framework.version>4.0.0.RELEASE</spring-framework.version>
 
-		<!-- Hibernate / JPA -->
-		<hibernate.version>4.2.1.Final</hibernate.version>
-
 		<!-- Logging -->
 		<logback.version>1.0.13</logback.version>
 		<slf4j.version>1.7.5</slf4j.version>
@@ -125,13 +122,6 @@
 			<version>${logback.version}</version>
 			<scope>runtime</scope>
 		</dependency>
-
-		<!-- Hibernate -->
-		<!-- <dependency> -->
-		<!-- <groupId>org.hibernate</groupId> -->
-		<!-- <artifactId>hibernate-entitymanager</artifactId> -->
-		<!-- <version>${hibernate.version}</version> -->
-		<!-- </dependency> -->
 
 		<!-- Webjars (static dependencies distributed as JAR files) -->
 		<dependency>
