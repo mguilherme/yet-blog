@@ -16,8 +16,8 @@ import com.simple.blog.model.User;
 
 @Service
 public class PostServiceDummy implements PostService {
-
-	public Set<Post> getAllPosts() {
+	
+	public Set<Post> getPostsList(int pageNumber) {
 		User[] users = getDummyUsers();
 		LoremIpsum jlorem = new LoremIpsum();
 
@@ -47,6 +47,7 @@ public class PostServiceDummy implements PostService {
 			reply.setId(i+1);
 			reply.setComment(capitalize(jlorem.words(i % 2 == 0 ? 20 : 50)) + ".");
 			reply.setAuthor(i % 2 == 0 ? users[0] : users[1]);
+			reply.setCreationDate(new Date());
 			
 			replies.add(reply);
 		}
@@ -76,6 +77,21 @@ public class PostServiceDummy implements PostService {
 		users[1] = user2;
 
 		return users;
+	}
+
+	public Post getPost(int id) {
+		User[] users = getDummyUsers();
+		LoremIpsum jlorem = new LoremIpsum();
+		
+		Post post = new Post();
+		post.setId(id);
+		post.setAuthor(users[1]);
+		post.setContent(capitalize(jlorem.words(80)) + ".");
+		post.setCreationDate(new Date());
+		post.setTitle(capitalize(jlorem.words(3)));
+		post.setReplies(getReplies(4));
+		
+		return post;
 	}
 
 }
