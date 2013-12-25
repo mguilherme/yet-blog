@@ -2,18 +2,17 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 <html>
 
-<jsp:include page="fragments/headTag.jsp"/>
+<jsp:include page="fragments/headTag.jsp" />
 
 <body>
 
-	<jsp:include page="fragments/navBar.jsp"/>
+	<jsp:include page="fragments/navBar.jsp" />
 
 	<div class="container">
-
 		<div class="row">
 			<div class="col-lg-8">
 
@@ -34,7 +33,8 @@
 							timeStyle="short" type="both" />
 					</p>
 					<p>
-						<span class="glyphicon glyphicon-comment"></span> ${fn:length(post.replies)} comments
+						<span class="glyphicon glyphicon-comment"></span>
+						${fn:length(post.replies)} comments
 					</p>
 					<hr>
 					<img src="http://placehold.it/900x300" class="img-responsive">
@@ -48,8 +48,12 @@
 
 				<!-- pager -->
 				<ul class="pager">
-					<li class="previous"><a href="#">&larr; Older</a></li>
-					<li class="next"><a href="#">Newer &rarr;</a></li>
+					<spring:url value="/page/${pageNumber+1}" var="olderUrl" />
+					<li class="previous"><a href="${olderUrl}">&larr; Older</a></li>
+
+					<!-- FIXME -->
+					<spring:url value="/page/${pageNumber-1}" var="newerUrl" />
+					<li class="next"><a href="${newerUrl}">Newer &rarr;</a></li>
 				</ul>
 
 			</div>
@@ -101,12 +105,12 @@
 
 		<hr>
 
-		<jsp:include page="fragments/footer.jsp"/>
+		<jsp:include page="fragments/footer.jsp" />
 
 	</div>
 	<!-- /.container -->
 
-	<jsp:include page="fragments/bottomJS.jsp"/>
+	<jsp:include page="fragments/bottomJS.jsp" />
 
 </body>
 </html>

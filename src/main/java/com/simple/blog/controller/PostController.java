@@ -26,6 +26,7 @@ public class PostController {
     public String showPostList(@PathVariable int pageNumber, ModelMap model) {
 		Set<Post> posts = postService.getPostsList(pageNumber);
 		model.addAttribute("posts", posts);
+		model.addAttribute("pageNumber", pageNumber);
 		return "postsList";
     }
 	
