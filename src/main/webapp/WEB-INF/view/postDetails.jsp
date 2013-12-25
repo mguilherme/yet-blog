@@ -1,6 +1,8 @@
 <!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <html>
 
@@ -27,13 +29,14 @@
 					<fmt:formatDate value="${post.creationDate}" dateStyle="medium"
 						timeStyle="short" type="both" />
 				</p>
+				<p>
+					<span class="glyphicon glyphicon-comment"></span>
+					${fn:length(post.replies)} comments
+				</p>
 				<hr>
 				<img src="http://placehold.it/900x300" class="img-responsive">
 				<hr>
-				
-				${post.content}
-				
-
+				<p style="text-align: justify;">${post.content}</p>
 				<hr>
 
 				<!-- the comment box -->
@@ -50,21 +53,13 @@
 				<hr>
 
 				<!-- the comments -->
-				<h3>
-					Start Bootstrap <small>9:41 PM on August 24, 2013</small>
-				</h3>
-				<p>This has to be the worst blog post I have ever read. It
-					simply makes no sense. You start off by talking about space or
-					something, then you randomly start babbling about cupcakes, and you
-					end off with random fish names.</p>
-
-				<h3>
-					Start Bootstrap <small>9:47 PM on August 24, 2013</small>
-				</h3>
-				<p>Don't listen to this guy, any blog with the categories
-					'dinosaurs, spaceships, fried foods, wild animals, alien
-					abductions, business casual, robots, and fireworks' has true
-					potential.</p>
+				<c:forEach var="reply" items="${post.replies}">
+					<h3>${reply.author.fullName}
+						<small><fmt:formatDate value="${reply.creationDate}"
+								dateStyle="medium" timeStyle="short" type="both" /></small>
+					</h3>
+					<p style="text-align: justify;">${reply.comment}</p>
+				</c:forEach>
 
 			</div>
 
