@@ -48,12 +48,16 @@
 
 				<!-- pager -->
 				<ul class="pager">
+					<%-- TODO: show button only if there's more pages, db related stuff --%>
 					<spring:url value="/page/${pageNumber+1}" var="olderUrl" />
 					<li class="previous"><a href="${olderUrl}">&larr; Older</a></li>
 
-					<!-- FIXME -->
-					<spring:url value="/page/${pageNumber-1}" var="newerUrl" />
-					<li class="next"><a href="${newerUrl}">Newer &rarr;</a></li>
+					<%-- Show Newer button if page number > 1 --%>
+					<c:if test="${pageNumber > 1}">
+						<spring:url value="/page/${pageNumber <= 1 ? 1 : (pageNumber-1) }"
+							var="newerUrl" />
+						<li class="next"><a href="${newerUrl}">Newer &rarr;</a></li>
+					</c:if>
 				</ul>
 
 			</div>

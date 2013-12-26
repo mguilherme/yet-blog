@@ -24,13 +24,17 @@ public class PostController {
 
 	@RequestMapping(value = "/page/{pageNumber}", method = RequestMethod.GET)
     public String showPostList(@PathVariable int pageNumber, ModelMap model) {
+		if(pageNumber < 1) {
+			return "redirect:/page/1";
+		}
+		
 		Set<Post> posts = postService.getPostsList(pageNumber);
 		model.addAttribute("posts", posts);
 		model.addAttribute("pageNumber", pageNumber);
 		return "postsList";
     }
 	
-	@RequestMapping("/post/{id}")
+	@RequestMapping(value = "/post/{id}", method = RequestMethod.GET)
 	public String showPost(@PathVariable int id, ModelMap model) {
 		Post post = postService.getPost(id);
 		model.addAttribute("post", post);

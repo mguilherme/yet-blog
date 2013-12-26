@@ -17,7 +17,7 @@
 		<div class="row">
 			<div class="col-lg-8">
 
-				<!-- the actual blog post: title/author/date/content -->
+				<!-- blog post -->
 				<h1>${post.title}</h1>
 				<p class="lead">
 					<spring:url value="/user/${post.author.userName}" var="userUrl" />

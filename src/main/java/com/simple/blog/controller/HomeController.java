@@ -11,7 +11,7 @@ public class HomeController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
     public String home(ModelMap model) {
-		return "forward:page/1";
+		return "forward:/page/1";
     }
 	
 }
