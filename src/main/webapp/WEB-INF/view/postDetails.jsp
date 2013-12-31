@@ -54,9 +54,10 @@
 
 				<!-- the comments -->
 				<c:forEach var="reply" items="${post.replies}">
-					<h3>${reply.author.fullName}
-						<small><fmt:formatDate value="${reply.creationDate}"
-								dateStyle="medium" timeStyle="short" type="both" /></small>
+					<h3>
+						${reply.author.fullName}<small> <fmt:formatDate
+								value="${reply.creationDate}" dateStyle="medium"
+								timeStyle="short" type="both" /></small>
 					</h3>
 					<p style="text-align: justify;">${reply.comment}</p>
 				</c:forEach>
