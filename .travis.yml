@@ -3,3 +3,6 @@ script: mvn package
 jdk:
   - oraclejdk7
   - openjdk7
+notifications:
+  email:
+    - mguilherme82@gmail.com
