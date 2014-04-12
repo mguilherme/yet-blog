@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
-	xmlns:context="http://www.springframework.org/schema/context"
-	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<context:component-scan base-package="com.simple.blog" />
+    <context:component-scan base-package="com.simple.blog" />
 
-	<mvc:annotation-driven />
+    <mvc:annotation-driven />
 
-	<!-- all resources inside folder src/main/webapp/resources are mapped so 
-		they can be refered to inside JSP files (see header.jsp for more details) -->
-	<mvc:resources mapping="/resources/**" location="/resources/" />
+    <!-- all resources inside folder src/main/webapp/resources are mapped so 
+    they can be refered to inside JSP files (see header.jsp for more details) -->
+    <mvc:resources mapping="/resources/**" location="/resources/" />
 
-	<!-- uses WebJars so Javascript and CSS libs can be declared as Maven dependencies 
-		(Bootstrap, jQuery...) -->
-	<mvc:resources mapping="/webjars/**" location="classpath:/META-INF/resources/webjars/" />
+    <!-- uses WebJars so Javascript and CSS libs can be declared as Maven dependencies 
+    (Bootstrap, jQuery...) -->
+    <mvc:resources mapping="/webjars/**" location="classpath:/META-INF/resources/webjars/" />
 	
-	<bean
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<!-- Example: a logical view name of 'showMessage' is mapped to '/WEB-INF/jsp/showMessage.jsp' -->
-		<property name="prefix" value="/WEB-INF/view/" />
-		<property name="suffix" value=".jsp" />
-	</bean>
+    <bean
+        class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!-- Example: a logical view name of 'showMessage' is mapped to '/WEB-INF/jsp/showMessage.jsp' -->
+        <property name="prefix" value="/WEB-INF/view/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
 
 </beans>
