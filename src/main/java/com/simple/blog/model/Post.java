@@ -5,59 +5,59 @@ import java.util.Set;
 
 public class Post {
 
-	private long id;
-	private String title;
-	private User author;
-	private Date creationDate;
-	private String content;
-	private Set<Reply> replies;
-	
-	public long getId() {
-		return id;
-	}
+    private long id;
+    private String title;
+    private User author;
+    private Date creationDate;
+    private String content;
+    private Set<Reply> replies;
 
-	public void setId(long id) {
-		this.id = id;
-	}
-	
-	public String getTitle() {
-		return title;
-	}
-	
-	public void setTitle(String title) {
-		this.title = title;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public User getAuthor() {
-		return author;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public void setAuthor(User author) {
-		this.author = author;
-	}
+    public String getTitle() {
+        return title;
+    }
 
-	public Date getCreationDate() {
-		return creationDate;
-	}
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-	public void setCreationDate(Date creationDate) {
-		this.creationDate = creationDate;
-	}
+    public User getAuthor() {
+        return author;
+    }
 
-	public String getContent() {
-		return content;
-	}
+    public void setAuthor(User author) {
+        this.author = author;
+    }
 
-	public void setContent(String content) {
-		this.content = content;
-	}
+    public Date getCreationDate() {
+        return creationDate;
+    }
 
-	public Set<Reply> getReplies() {
-		return replies;
-	}
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
+    }
 
-	public void setReplies(Set<Reply> replies) {
-		this.replies = replies;
-	}
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public Set<Reply> getReplies() {
+        return replies;
+    }
+
+    public void setReplies(Set<Reply> replies) {
+        this.replies = replies;
+    }
 
 }
